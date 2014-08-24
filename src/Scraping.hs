@@ -9,3 +9,6 @@ getNodes xpath = css xpath >>> getChildren >>> getText
 
 getValues :: String -> XPathExpression -> [String]
 getValues page xpath = runLA (hread >>> getNodes xpath) page
+
+getFirstMatchingValue :: String -> XPathExpression -> String
+getFirstMatchingValue page xpath = head $ getValues page xpath

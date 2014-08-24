@@ -8,6 +8,7 @@ main :: IO ()
 main = hspec spec
 
 sampleHtmlString = "<body><div class='a'>ClassA</div><div class='a'><span>SpanInClassA</span></div>"
+sampleHtmlStringWithId = "<body><div id='a'>IdA</div><div id='b'><span>IdB</span></div>"
 
 spec = do
     describe "scraper" $ do
@@ -15,3 +16,7 @@ spec = do
         getValues sampleHtmlString ".a" `shouldBe` ["ClassA"]
       it "matches deeper xpath expressions" $ do 
         getValues sampleHtmlString ".a span" `shouldBe` ["SpanInClassA"]
+      it "can get first matching value - useful for ID based xpath expressions" $ do 
+        getValues sampleHtmlStringWithId "#a" `shouldBe` ["IdA"]
+      it "can get first matching value with deeper expressions - useful for ID based xpath expressions" $ do 
+        getValues sampleHtmlStringWithId "#b span" `shouldBe` ["IdB"]

@@ -6,7 +6,7 @@ import Scraping
 import Data.String.Utils
 
 instance Scrapable Name where
-    scrapeFromPage page = uncurry Name $ ((head . map strip $ getValues page "#name .given-name"), (head . map strip $ getValues page "#name .family-name"))
+    scrapeFromPage page = uncurry Name $ ((strip $ getFirstMatchingValue page "#name .given-name"), (strip $ getFirstMatchingValue page "#name .family-name"))
 instance Scrapable [Skill] where
     scrapeFromPage page = map strip $ getValues page "#profile-skills .competency span"
  

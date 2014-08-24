@@ -1,8 +1,11 @@
-module Scraping where
+module Scraping (
+    getValues,
+    getFirstMatchingValue
+) where
 
 import Text.HandsomeSoup
 import Text.XML.HXT.Core
-import Types
+import Types.Generic
 
 getNodes :: ArrowXml a => XPathExpression -> a XmlTree String
 getNodes xpath = css xpath >>> getChildren >>> getText

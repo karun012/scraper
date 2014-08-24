@@ -1,7 +1,8 @@
 {-# LANGUAGE FlexibleInstances #-}
-module LinkedInScraper where
+module Scrapers.LinkedInScraper where
 
-import Types
+import Types.LinkedInTypes
+import Types.Generic
 import Scraping
 import Data.String.Utils
 

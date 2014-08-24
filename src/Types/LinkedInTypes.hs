@@ -1,6 +1,5 @@
-module Types where
+module Types.LinkedInTypes where
 
-type XPathExpression = String
 type LinkedInUrl = String
 type Skill = String
  
@@ -14,5 +13,3 @@ data LinkedInProfile = LinkedInProfile {
 } deriving (Show)
 data Experience = Experience { company :: String, position :: String } deriving (Show)
 
-class Scrapable a where
-    scrapeFromPage :: String -> a

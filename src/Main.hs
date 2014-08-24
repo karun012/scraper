@@ -1,7 +1,8 @@
 module Main where
 
-import LinkedInScraper
-import Types
+import Scrapers.LinkedInScraper
+import Types.LinkedInTypes
+import Types.Generic
 import Http
 import Control.Applicative ((<$>))
 import Safe (headMay)

@@ -12,7 +12,7 @@ instance Scrapable [Skill] where
     scrapeFromPage page = map strip $ getValues page "#profile-skills .competency span"
  
 instance Scrapable [Experience] where
-    scrapeFromPage page = map (uncurry Experience) $ zip (companies page) (positions page)
+    scrapeFromPage page = zipWith Experience (companies page) (positions page)
 
 instance Scrapable LinkedInProfile where
     scrapeFromPage page = LinkedInProfile { 

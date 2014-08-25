@@ -19,4 +19,6 @@ spec = do
       it "can get first matching value - useful for ID based xpath expressions" $ do 
         getValues sampleHtmlStringWithId "#a" `shouldBe` ["IdA"]
       it "can get first matching value with deeper expressions - useful for ID based xpath expressions" $ do 
-        getValues sampleHtmlStringWithId "#b span" `shouldBe` ["IdB"]
+        getFirstMatchingValue sampleHtmlStringWithId "#b span" `shouldBe` "IdB"
+      it "returns an empty string if the first matching value is not present" $ do 
+        getFirstMatchingValue sampleHtmlStringWithId "#non-existant-span" `shouldBe` ""

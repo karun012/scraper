@@ -17,15 +17,15 @@ executable scraper
   main-is:             Main.hs
   other-modules:       Scraping, Scrapers.LinkedInScraper, Http
   other-extensions:    FlexibleInstances
-  build-depends:       base >=4.6 && <4.7, HTTP >=4000.2.17, hxt >=9.3.1.4, HandsomeSoup >=0.3.2, mtl >=2.2.1, MaybeT >=0.1.2, network >=2.5.0.0, safe, MissingH
+  build-depends:       base >=4.6 && <4.7, HTTP >=4000.2.17, hxt >=9.3.1.4, HandsomeSoup >=0.3.2, mtl >=2.2.1, MaybeT >=0.1.2, safe, MissingH, network-uri >=2.6.0.0
   HS-Source-Dirs:      src
-  ghc-options:         -isrc
+  ghc-options:         -isrc -threaded
   default-language:    Haskell2010
 
 test-suite test
   default-language:    Haskell2010
   HS-Source-Dirs:      test
-  build-depends:       base >=4.6 && <4.7, QuickCheck, hspec >=1.9.5, HTTP >=4000.2.17, hxt >=9.3.1.4, HandsomeSoup >=0.3.2, mtl >=2.2.1, MaybeT >=0.1.2, network >=2.5.0.0, safe
+  build-depends:       base >=4.6 && <4.7, QuickCheck, hspec >=1.9.5, HTTP >=4000.2.17, hxt >=9.3.1.4, HandsomeSoup >=0.3.2, mtl >=2.2.1, MaybeT >=0.1.2, safe, network-uri >=2.6.0.0
   type:                exitcode-stdio-1.0
   ghc-options:         -threaded -isrc
   main-is:             Spec.hs

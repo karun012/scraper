@@ -17,7 +17,7 @@ executable linkedInScraper
   main-is:             LinkedInMain.hs
   other-modules:       Scraping, Scrapers.LinkedInScraper, Http
   other-extensions:    FlexibleInstances
-  build-depends:       base >=4.6 && <4.7, HTTP, hxt, HandsomeSoup, mtl, MaybeT, safe, MissingH, network-uri
+  build-depends:       base >=4.6 && <4.7, HTTP, hxt, network-uri, HandsomeSoup, mtl, MaybeT, safe, MissingH
   HS-Source-Dirs:      src
   ghc-options:         -isrc -threaded -O1
   default-language:    Haskell2010
@@ -25,7 +25,7 @@ executable linkedInScraper
 test-suite test
   default-language:    Haskell2010
   HS-Source-Dirs:      test
-  build-depends:       base >=4.6 && <4.7, QuickCheck, hspec, HTTP, hxt, HandsomeSoup, mtl, MaybeT, safe, network-uri
+  build-depends:       base >=4.6 && <4.7, HTTP, hxt, network-uri, HandsomeSoup, mtl, MaybeT, safe, MissingH, QuickCheck, hspec
   type:                exitcode-stdio-1.0
   ghc-options:         -threaded -isrc
   main-is:             Spec.hs
